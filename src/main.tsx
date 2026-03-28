@@ -2,6 +2,9 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider, createBrowserRouter, Navigate } from 'react-router-dom'
 import './index.css'
+import { seedInitialData } from './lib/seedData'
+
+seedInitialData()
 import AppLayout from './layouts/AppLayout.tsx'
 import LandingPage from './pages/LandingPage.tsx'
 import AuthPage from './pages/AuthPage.tsx'
