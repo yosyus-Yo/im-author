@@ -74,7 +74,7 @@ export async function callOpenAI(
         ],
         tools,
         tool_choice: toolChoice,
-        max_completion_tokens: Number(import.meta.env.VITE_MAX_TOKENS || '4096'),
+        max_completion_tokens: Number(import.meta.env.VITE_MAX_TOKENS || '8192'),
       }),
     })
 
@@ -139,7 +139,7 @@ export async function callOpenAIStream(
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userMessage },
         ],
-        max_completion_tokens: Number(import.meta.env.VITE_MAX_TOKENS || '4096'),
+        max_completion_tokens: Number(import.meta.env.VITE_MAX_TOKENS || '8192'),
       }),
     })
 

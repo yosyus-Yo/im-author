@@ -189,7 +189,7 @@ export async function publishBook(bookId: string) {
 
   if (await isSupabaseAuthenticated()) {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await supabase!
         .from('books')
         .update({
           is_published: true,
@@ -234,7 +234,7 @@ export async function publishBook(bookId: string) {
 export async function getPublishedBooks() {
   if (await isSupabaseAuthenticated()) {
     try {
-      const { data, error } = await supabase
+      const { data, error } = await supabase!
         .from('books')
         .select('*')
         .eq('is_published', true)
@@ -260,7 +260,7 @@ export async function getPublishedBooks() {
 export async function getBookById(id: string) {
   if (await isSupabaseAuthenticated()) {
     try {
-      const { data, error } = await supabase.from('books').select('*').eq('id', id).single()
+      const { data, error } = await supabase!.from('books').select('*').eq('id', id).single()
 
       if (error) {
         throw error
