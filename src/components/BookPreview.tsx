@@ -66,6 +66,24 @@ function PublicationReadyBadge({ ready }: { ready: boolean }) {
   )
 }
 
+const PHASE_ORDER: BookProject['currentPhase'][] = [
+  'researching', 'synopsis', 'outlining', 'writing', 'editing', 'publishing', 'complete',
+]
+
+const PHASE_LABELS: Record<string, { icon: string; label: string }> = {
+  researching: { icon: '🔍', label: '리서치' },
+  synopsis: { icon: '📖', label: '시놉시스' },
+  outlining: { icon: '📋', label: '목차' },
+  writing: { icon: '✍️', label: '집필' },
+  editing: { icon: '📝', label: '편집' },
+  publishing: { icon: '📦', label: '출판' },
+  complete: { icon: '✅', label: '완료' },
+}
+
+function getPhaseIndex(phase: BookProject['currentPhase']): number {
+  return PHASE_ORDER.indexOf(phase)
+}
+
 export default function BookPreview({
   project,
   onReset,
@@ -74,6 +92,7 @@ export default function BookPreview({
 }: BookPreviewProps) {
   const [showSelfEdit, setShowSelfEdit] = useState(false)
   const [editableChapter, setEditableChapter] = useState<ChapterDraft | null>(null)
+  const [viewPhase, setViewPhase] = useState<BookProject['currentPhase'] | null>(null)
   const latestChapter = useMemo(
     () => project.chapters[project.chapters.length - 1] || null,
     [project.chapters],
@@ -624,29 +643,103 @@ export default function BookPreview({
     )
   }
 
+  const displayPhase = viewPhase || project.currentPhase
+  const currentIdx = getPhaseIndex(project.currentPhase)
+  const isIdle = project.currentPhase === 'idle'
+
+  const renderPhaseContent = (phase: BookProject['currentPhase']) => {
+    switch (phase) {
+      case 'idle': return renderIdle()
+      case 'researching': return renderResearch()
+      case 'synopsis': return renderSynopsis()
+      case 'outlining': return renderOutline()
+      case 'writing': return renderWriting()
+      case 'editing': return renderEditing()
+      case 'publishing': return renderPublishing()
+      case 'complete': return renderComplete()
+      default: return null
+    }
+  }
+
   return (
     <section className="flex min-h-[72vh] flex-col gap-6 overflow-hidden rounded-[32px]">
       <PipelineProgress currentPhase={project.currentPhase} />
 
-      <div className="flex flex-1 flex-col overflow-hidden rounded-[32px] border border-stone-200 bg-[#fbf7f1] shadow-[0_18px_44px_rgba(120,113,108,0.14)]">
-        <div className="flex-1 overflow-y-auto p-1">
-          <div className="p-5">
-            {project.currentPhase === 'idle' ? renderIdle() : null}
-            {project.currentPhase === 'researching' ? renderResearch() : null}
-            {project.currentPhase === 'synopsis' ? renderSynopsis() : null}
-            {project.currentPhase === 'outlining' ? renderOutline() : null}
-            {project.currentPhase === 'writing' ? renderWriting() : null}
-            {project.currentPhase === 'editing' ? renderEditing() : null}
-            {project.currentPhase === 'publishing' ? renderPublishing() : null}
-            {project.currentPhase === 'complete' ? renderComplete() : null}
-          </div>
-        </div>
+      <div className="flex flex-1 overflow-hidden rounded-[32px] border border-stone-200 bg-[#fbf7f1] shadow-[0_18px_44px_rgba(120,113,108,0.14)]">
+        {!isIdle && (
+          <nav className="w-36 shrink-0 border-r border-stone-200 bg-[#f8f2ea] py-3 overflow-y-auto">
+            {PHASE_ORDER.map((phase) => {
+              const phaseIdx = getPhaseIndex(phase)
+              const isReached = phaseIdx <= currentIdx
+              const isActive = displayPhase === phase
+              const meta = PHASE_LABELS[phase]
 
-        <UserFeedbackBar
-          currentPhase={project.currentPhase}
-          onSubmit={onFeedbackSubmit || (async () => {})}
-          isProcessing={isFeedbackProcessing}
-        />
+              return (
+                <button
+                  key={phase}
+                  type="button"
+                  onClick={() => setViewPhase(phase)}
+                  disabled={!isReached}
+                  className={`w-full text-left px-3 py-2.5 text-xs transition-colors ${
+                    isActive
+                      ? 'bg-amber-700/10 text-amber-900 font-semibold border-r-2 border-amber-700'
+                      : isReached
+                        ? 'text-stone-700 hover:bg-stone-200/50'
+                        : 'text-stone-400 cursor-not-allowed'
+                  }`}
+                >
+                  <span className="mr-1.5">{meta.icon}</span>
+                  {meta.label}
+                  {phaseIdx < currentIdx && <span className="ml-1 text-emerald-600">✓</span>}
+                  {phase === project.currentPhase && phaseIdx < getPhaseIndex('complete') && (
+                    <span className="ml-1 text-amber-600 animate-pulse">●</span>
+                  )}
+                </button>
+              )
+            })}
+
+            {project.chapters.length > 1 && (
+              <>
+                <div className="mx-3 my-2 border-t border-stone-300" />
+                <p className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-stone-400">
+                  Chapters
+                </p>
+                {project.chapters.map((ch) => (
+                  <button
+                    key={ch.chapterNumber}
+                    type="button"
+                    onClick={() => {
+                      setEditableChapter(ch)
+                      setViewPhase('writing')
+                    }}
+                    className={`w-full text-left px-3 py-2 text-xs transition-colors ${
+                      activeChapter?.chapterNumber === ch.chapterNumber && displayPhase === 'writing'
+                        ? 'bg-amber-700/10 text-amber-900 font-semibold'
+                        : 'text-stone-600 hover:bg-stone-200/50'
+                    }`}
+                  >
+                    {ch.chapterNumber}장
+                    <span className="ml-1 text-stone-400 truncate block text-[10px]">{ch.title}</span>
+                  </button>
+                ))}
+              </>
+            )}
+          </nav>
+        )}
+
+        <div className="flex flex-1 flex-col overflow-hidden">
+          <div className="flex-1 overflow-y-auto p-1">
+            <div className="p-5">
+              {renderPhaseContent(displayPhase)}
+            </div>
+          </div>
+
+          <UserFeedbackBar
+            currentPhase={project.currentPhase}
+            onSubmit={onFeedbackSubmit || (async () => {})}
+            isProcessing={isFeedbackProcessing}
+          />
+        </div>
       </div>
     </section>
   )
