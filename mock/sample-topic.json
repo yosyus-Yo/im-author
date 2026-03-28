@@ -1,0 +1,53 @@
+{
+  "genre": "nonfiction",
+  "topic": "AI 시대의 글쓰기: 인간과 AI가 함께 책을 만드는 법",
+  "research": {
+    "topic": "AI 시대의 글쓰기",
+    "marketAnalysis": {
+      "trend": "AI 글쓰기 도구 시장 연평균 35% 성장",
+      "targetAudience": "콘텐츠 크리에이터, 작가 지망생, 마케터",
+      "estimatedReaders": "50,000+"
+    },
+    "competition": [
+      {
+        "title": "ChatGPT 글쓰기 바이블",
+        "strength": "실용적 프롬프트 모음",
+        "weakness": "AI 협업 워크플로우 부재"
+      },
+      {
+        "title": "AI로 책 쓰기",
+        "strength": "초보자 친화적",
+        "weakness": "깊이 부족, 기술적 내용 미흡"
+      }
+    ],
+    "differentiation": "에이전트 기반 자동 출판 파이프라인을 실제 구축하는 실습 중심 접근",
+    "goNoGo": "GO",
+    "confidence": 0.87,
+    "reasoning": "AI 글쓰기 시장은 성장 중이나, '멀티에이전트 출판 시스템'을 다룬 책은 부재. 차별화 가능."
+  },
+  "synopsis": {
+    "synopsis": "이 책은 AI를 단순한 글쓰기 도구가 아닌 '팀원'으로 보는 새로운 관점을 제시합니다. 리서처, 작가, 편집자, 출판담당이라는 4명의 전문 AI 에이전트가 각자의 역할을 수행하며 한 권의 책을 완성해 나가는 과정을 독자와 함께 경험합니다. 독자는 이 책을 따라하며 자신만의 AI 출판 파이프라인을 구축할 수 있습니다.",
+    "characters": [
+      { "name": "리서처 에이전트", "role": "기획자", "description": "주제의 시장성과 독창성을 분석하고 Go/No-Go 판정" },
+      { "name": "작가 에이전트", "role": "집필자", "description": "목차 설계, 챕터 집필, 3계층 자기편집 수행" },
+      { "name": "편집자 에이전트", "role": "품질관리", "description": "7단계 검수와 피드백 루프로 원고 품질 향상" },
+      { "name": "출판담당 에이전트", "role": "출판준비", "description": "메타데이터, 표지 방향, 포맷/가격 결정" }
+    ],
+    "coreConflict": "AI가 정말 '좋은 글'을 쓸 수 있는가? 인간의 창의성과 AI의 효율성은 어떻게 공존하는가?",
+    "theme": "AI는 도구가 아니라 협업 파트너이다",
+    "targetAudience": "글을 쓰고 싶지만 혼자서는 엄두가 나지 않는 모든 사람"
+  },
+  "outline": {
+    "title": "AI 시대의 글쓰기",
+    "subtitle": "4명의 AI 에이전트와 함께 책 한 권을 완성하는 여정",
+    "chapters": [
+      { "number": 1, "title": "왜 AI와 함께 글을 쓰는가", "summary": "글쓰기의 병목을 분석하고 AI 협업의 가능성을 탐구" },
+      { "number": 2, "title": "AI 에이전트란 무엇인가", "summary": "에이전트의 개념과 멀티에이전트 시스템의 원리" },
+      { "number": 3, "title": "리서처 에이전트 - 주제를 검증하다", "summary": "시장 조사와 Go/No-Go 판정의 실제" },
+      { "number": 4, "title": "작가 에이전트 - 초안을 쓰다", "summary": "목차 설계부터 3계층 자기편집까지" },
+      { "number": 5, "title": "편집자 에이전트 - 품질을 높이다", "summary": "7단계 검수와 피드백 루프" },
+      { "number": 6, "title": "파이프라인 구축하기", "summary": "4명의 에이전트를 연결하는 오케스트레이션" },
+      { "number": 7, "title": "실전 프로젝트: 나만의 책 만들기", "summary": "독자가 직접 AI와 함께 책을 완성하는 실습" }
+    ]
+  }
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>I'm Author - Reader Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e7e2d9",
+              "primary": "#5a5653",
+              "outline": "#897267",
+              "on-surface": "#1d1b16",
+              "surface-container-lowest": "#ffffff",
+              "inverse-on-surface": "#f6f0e7",
+              "primary-container": "#736e6b",
+              "secondary-container": "#fd8a42",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#76330d",
+              "on-tertiary": "#ffffff",
+              "on-background": "#1d1b16",
+              "surface-container-low": "#f9f3ea",
+              "on-secondary-fixed": "#331200",
+              "on-secondary-fixed-variant": "#763300",
+              "on-error-container": "#93000a",
+              "secondary": "#9b4500",
+              "on-tertiary-fixed": "#351000",
+              "tertiary-fixed-dim": "#ffb693",
+              "surface-dim": "#dfd9d1",
+              "surface-tint": "#625d5b",
+              "tertiary": "#8a421c",
+              "on-error": "#ffffff",
+              "surface-variant": "#e7e2d9",
+              "tertiary-fixed": "#ffdbcc",
+              "on-surface-variant": "#564338",
+              "surface-container-high": "#ede7de",
+              "surface-container": "#f3ede4",
+              "tertiary-container": "#a85a32",
+              "on-primary-fixed": "#1e1b19",
+              "on-primary-fixed-variant": "#4a4643",
+              "background": "#fff9ef",
+              "surface": "#fff9ef",
+              "primary-fixed": "#e9e1dd",
+              "on-primary-container": "#faf2ee",
+              "inverse-surface": "#32302a",
+              "surface-bright": "#fff9ef",
+              "error": "#ba1a1a",
+              "on-tertiary-container": "#fff0eb",
+              "inverse-primary": "#ccc5c2",
+              "error-container": "#ffdad6",
+              "on-primary": "#ffffff",
+              "outline-variant": "#ddc1b3",
+              "primary-fixed-dim": "#ccc5c2",
+              "secondary-fixed": "#ffdbca",
+              "secondary-fixed-dim": "#ffb68e",
+              "on-secondary-container": "#682c00"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf7f1;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopAppBar Navigation Shell -->
+<header class="bg-[#fdf9f3]/80 dark:bg-stone-950/80 backdrop-blur-md flex justify-between items-center w-full px-8 py-4 sticky top-0 docked full-width z-50 no-border bg-stone-100/50 dark:bg-stone-800/30">
+<div class="flex items-center gap-6">
+<h1 class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-50 tracking-tight leading-relaxed">I'm Author</h1>
+<nav class="hidden md:flex gap-8 items-center font-serif tracking-tight leading-relaxed">
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Write</a>
+<a class="text-amber-700 dark:text-amber-500 font-semibold border-b-2 border-amber-700 dark:border-amber-500 pb-1" href="#">Library</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Community</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<button class="p-2 hover:text-amber-700 dark:hover:text-amber-400 transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:text-amber-700 dark:hover:text-amber-400 transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a thoughtful male author in a cozy library setting with soft warm lamp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_r6DiRnvvctjtfgRsO6ZRtXqsBRDujZzrfKDTrDRE_6kP9aLMrfda-7qhqrvhgd_e2E2W9Q3hcSq6H7A2_bOtNt35X7ZTND19fsSQSsx6GSza7O0Yo7CphnBoeAw13mlrnTNiW_MeBrmamPTgYAFUc0HyjGq5ie4ejJpG7sO5ncsVqeBpukiWEynv1o7P8tNKs9orGfgxt84tiQVSJawogLM_Keyrt5V2t5wBY3bUOE6-YiaI79xF0c5tP_CvTWA3mbt_KWhOJEM"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Hidden on Mobile, collapsed for Reader focus) -->
+<aside class="fixed left-0 top-0 h-full pt-20 pb-8 flex flex-col px-4 bg-[#f3ede4] dark:bg-stone-900 h-screen w-16 md:w-64 border-r-0 tonal-shift bg-stone-200/40 dark:bg-stone-800/50 hidden xl:flex">
+<div class="mb-10 px-2">
+<h3 class="font-headline text-stone-800 dark:text-stone-200 text-sm uppercase tracking-widest opacity-50">Workspace</h3>
+<p class="font-headline font-bold text-lg mt-1">The Great Novel</p>
+</div>
+<nav class="space-y-2 flex-1">
+<div class="flex items-center gap-3 px-3 py-2 text-stone-500 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="book">book</span>
+<span class="hidden md:block">Manuscripts</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 bg-[#ffffff] dark:bg-stone-800 text-amber-700 dark:text-amber-400 rounded-md shadow-sm font-medium transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="segment">segment</span>
+<span class="hidden md:block">Chapters</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-stone-500 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="hidden md:block">Research</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-stone-500 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="hidden md:block">Characters</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-stone-500 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="format_list_bulleted">format_list_bulleted</span>
+<span class="hidden md:block">Outlines</span>
+</div>
+</nav>
+<div class="pt-6 border-t border-stone-300/30">
+<div class="flex items-center gap-3 px-3 py-2 text-stone-400 dark:text-stone-600 hover:text-amber-700 transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span class="hidden md:block">Archive</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-stone-400 dark:text-stone-600 hover:text-amber-700 transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+<span class="hidden md:block">Trash</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas: The Reader -->
+<main class="min-h-screen pt-12 pb-32 px-6 flex flex-col items-center">
+<article class="max-w-[800px] w-full bg-transparent">
+<!-- Chapter Metadata Section -->
+<header class="mb-20 text-center">
+<div class="inline-block px-4 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[10px] uppercase tracking-[0.2em] font-bold mb-6">
+                    Manuscript Draft
+                </div>
+<h2 class="font-headline text-5xl md:text-6xl text-on-surface font-bold leading-tight mb-4 tracking-tighter">Chapter IV: The Whispering Pines</h2>
+<div class="flex items-center justify-center gap-4 text-stone-500 font-body text-sm italic">
+<span>Part Two: The Descent</span>
+<span class="w-1 h-1 rounded-full bg-stone-300"></span>
+<span>14 Minute Read</span>
+</div>
+</header>
+<!-- Reader Body -->
+<section class="font-headline text-lg md:text-xl leading-[1.8] text-stone-900 space-y-10">
+<p class="first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-letter:font-serif first-letter:leading-[0.8]">
+                    The air at the summit was different—thin, metallic, and sharp enough to sting the lungs. Elias pulled his wool coat tighter, the fabric scratching against his neck. Below him, the valley stretched out like a rumpled green velvet blanket, tucked into the dark crevices of the mountain range. He had been walking for three days, following a map drawn from memory and half-forgotten ghost stories told by his grandfather.
+                </p>
+<p>
+                    There was a rhythm to the silence here. It wasn't the absence of sound, but rather a complex composition of wind whistling through the jagged granite teeth and the distant, rhythmic thrum of the river far below. He checked his compass. The needle jittered, dancing between North and something else—something the instrument wasn't designed to measure.
+                </p>
+<div class="py-12 flex justify-center">
+<div class="w-24 h-[1px] bg-stone-200"></div>
+</div>
+<p>
+                    "You shouldn't have come," a voice echoed, soft as a falling leaf but clear as a bell in the still air. Elias didn't turn. He knew that voice. It was the sound of his own doubts made manifest, or perhaps something older living within the stones themselves. He reached into his satchel and pulled out the leather-bound journal—the reason for this pilgrimage.
+                </p>
+<div class="relative w-full aspect-[16/9] my-16 rounded-xl overflow-hidden group">
+<img alt="Mountain landscape" class="w-full h-full object-cover grayscale-[20%] transition-transform duration-700 group-hover:scale-105" data-alt="cinematic wide shot of misty blue mountains at dawn with soft atmospheric lighting and deep shadows in the valleys" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZa_X3p8cY_RdIeHagpKtdtNUEOvnvYyi9XIxl3tXNGoKvy0uK_HpCt4zRNeU6ClLnx1xOolAXJQapA9r8d2iJziGAIvNJm-9cdGSbv1Oo0HfjhrlSFAxQY_fH1qlF6wkv1ZHwLm9iHCqSy6ch6X-Xsj_-NTXBheqIOwZHfAVp2VdEU6GTVQqoRskQVYeJlnyJsnVo26hUSxhG4-cprW693EtvK-jrkRvq-jQsH43Tp20DEBqNUNuj-oNKSFkSosO47Eb2wTn8ew0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-6 left-8 text-white/90 italic font-serif text-sm">
+                        The view from the Black Ridge, where the path narrows.
+                    </div>
+</div>
+<p>
+                    The pages were yellowed, smelling of cedar and old ink. As he turned to the marked page, the symbols began to glow with a faint, amber luminescence, mirroring the setting sun. This wasn't just a book; it was a map to a place that didn't exist on any satellite imagery. It was a cartography of the human soul, etched in a language long forgotten by the modern world.
+                </p>
+<blockquote class="pl-8 border-l-4 border-amber-700/30 italic text-stone-700 text-2xl font-serif py-4 my-12">
+                    "The truth is not found in the light of day, but in the shadows we cast when we think no one is watching."
+                </blockquote>
+<p>
+                    He began to write. The ink flowed smoothly, appearing almost black on the page but reflecting a deep indigo when the light hit it just right. The words weren't his own; they were being pulled from the environment, channeled through his hand as if he were merely a lightning rod for the mountain's long-stored memories. 
+                </p>
+<p>
+                    By the time the stars began to poke through the deepening violet of the sky, Elias had filled three pages. His hands were cold, his eyes were weary, but for the first time in years, the noise in his head had stopped. He was no longer just a traveler. He was a witness.
+                </p>
+</section>
+<!-- Bottom Navigation / Chapter Selection -->
+<footer class="mt-32 pt-16 border-t border-stone-200/50">
+<div class="flex justify-between items-center mb-12">
+<a class="group flex items-center gap-4 text-stone-400 hover:text-stone-900 transition-all" href="#">
+<span class="material-symbols-outlined text-3xl transition-transform group-hover:-translate-x-1" data-icon="chevron_left">chevron_left</span>
+<div>
+<p class="text-[10px] uppercase tracking-widest font-bold">Previous</p>
+<p class="font-headline font-semibold">The Old Library</p>
+</div>
+</a>
+<div class="hidden sm:block text-stone-300 font-serif italic text-xl">❧</div>
+<a class="group flex items-center gap-4 text-stone-400 hover:text-stone-900 transition-all text-right" href="#">
+<div>
+<p class="text-[10px] uppercase tracking-widest font-bold">Next Chapter</p>
+<p class="font-headline font-semibold">The Glass Citadel</p>
+</div>
+<span class="material-symbols-outlined text-3xl transition-transform group-hover:translate-x-1" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</footer>
+</article>
+</main>
+<!-- Global Progress Bar (Floating at bottom) -->
+<div class="fixed bottom-0 left-0 w-full h-1.5 bg-stone-200/30 z-50">
+<div class="h-full bg-[#10b981]/60" style="width: 14%;"></div>
+</div>
+<!-- Reader Controls (Floating Action Bar) -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 px-6 py-3 bg-surface-container-lowest/90 backdrop-blur-md rounded-full shadow-2xl flex items-center gap-6 border border-outline-variant/20 z-50">
+<button class="p-2 text-stone-500 hover:text-amber-700 transition-colors">
+<span class="material-symbols-outlined" data-icon="text_fields">text_fields</span>
+</button>
+<div class="w-[1px] h-6 bg-stone-200"></div>
+<button class="p-2 text-stone-500 hover:text-amber-700 transition-colors">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+<button class="p-2 text-stone-500 hover:text-amber-700 transition-colors">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+<div class="w-[1px] h-6 bg-stone-200"></div>
+<button class="p-2 text-stone-500 hover:text-amber-700 transition-colors">
+<span class="material-symbols-outlined" data-icon="light_mode">light_mode</span>
+</button>
+</div>
+<!-- Final Page Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center border-t border-stone-200/30 dark:border-stone-800/30 bg-[#f5efe6] dark:bg-stone-950 mt-20 tonal-shift pt-12">
+<div class="mb-6 md:mb-0">
+<span class="font-serif italic text-stone-500">I'm Author</span>
+<p class="font-sans text-xs uppercase tracking-widest text-stone-400 dark:text-stone-600 mt-2">© 2024 I'm Author Publishing. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-sans text-xs uppercase tracking-widest text-stone-400 dark:text-stone-600 hover:text-amber-700 dark:hover:text-amber-500 transition-colors" href="#">Terms of Service</a>
+<a class="font-sans text-xs uppercase tracking-widest text-stone-400 dark:text-stone-600 hover:text-amber-700 dark:hover:text-amber-500 transition-colors" href="#">Author Support</a>
+<a class="font-sans text-xs uppercase tracking-widest text-stone-400 dark:text-stone-600 hover:text-amber-700 dark:hover:text-amber-500 transition-colors" href="#">Editorial Guidelines</a>
+</div>
+</footer>
+</body></html>

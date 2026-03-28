@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#e7e2d9",
+                        "primary": "#5a5653",
+                        "outline": "#897267",
+                        "on-surface": "#1d1b16",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f6f0e7",
+                        "primary-container": "#736e6b",
+                        "secondary-container": "#fd8a42",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#76330d",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1d1b16",
+                        "surface-container-low": "#f9f3ea",
+                        "on-secondary-fixed": "#331200",
+                        "on-secondary-fixed-variant": "#763300",
+                        "on-error-container": "#93000a",
+                        "secondary": "#9b4500",
+                        "on-tertiary-fixed": "#351000",
+                        "tertiary-fixed-dim": "#ffb693",
+                        "surface-dim": "#dfd9d1",
+                        "surface-tint": "#625d5b",
+                        "tertiary": "#8a421c",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e7e2d9",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-surface-variant": "#564338",
+                        "surface-container-high": "#ede7de",
+                        "surface-container": "#f3ede4",
+                        "tertiary-container": "#a85a32",
+                        "on-primary-fixed": "#1e1b19",
+                        "on-primary-fixed-variant": "#4a4643",
+                        "background": "#fff9ef",
+                        "surface": "#fff9ef",
+                        "primary-fixed": "#e9e1dd",
+                        "on-primary-container": "#faf2ee",
+                        "inverse-surface": "#32302a",
+                        "surface-bright": "#fff9ef",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#fff0eb",
+                        "inverse-primary": "#ccc5c2",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#ddc1b3",
+                        "primary-fixed-dim": "#ccc5c2",
+                        "secondary-fixed": "#ffdbca",
+                        "secondary-fixed-dim": "#ffb68e",
+                        "on-secondary-container": "#682c00"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            column-count: 4;
+            column-gap: 2rem;
+        }
+        @media (max-width: 1200px) { .masonry-grid { column-count: 3; } }
+        @media (max-width: 800px) { .masonry-grid { column-count: 2; } }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-[#fdf9f3]/80 dark:bg-stone-950/80 backdrop-blur-md text-stone-800 dark:text-stone-100 font-serif tracking-tight leading-relaxed docked full-width top-0 z-50 flex justify-between items-center w-full px-8 py-4 sticky top-0">
+<div class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-50">I'm Author</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 hover:text-amber-700 dark:hover:text-amber-400 transition-colors duration-300" href="#">Write</a>
+<a class="text-amber-700 dark:text-amber-500 font-semibold border-b-2 border-amber-700 dark:border-amber-500 pb-1" href="#">Library</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 hover:text-amber-700 dark:hover:text-amber-400 transition-colors duration-300" href="#">Community</a>
+</nav>
+<div class="flex items-center space-x-6">
+<div class="hidden lg:flex items-center bg-surface-container-highest px-4 py-2 rounded-sm">
+<span class="material-symbols-outlined text-outline text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 ml-2" placeholder="Search manuscripts..." type="text"/>
+</div>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-stone-600 hover:text-amber-700 transition-all">notifications</button>
+<button class="material-symbols-outlined text-stone-600 hover:text-amber-700 transition-all">settings</button>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="User profile avatar" data-alt="close-up portrait of a thoughtful man with a short beard in soft natural lighting against a neutral wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiaErS7xdmET3wkLYmogz0H9i7J4gUNVZU05f0WZCosCEx_y-Ljlpih4JIL45pMLLvlC8yPc2qbVVkEG6crQlKYtrkqKE7Fs7_FnD4Pu4aiw6se6GA4pgfeEgxbttWssVond2Czci6Qn1xc9uhCR5twi7hGVIbUI1qHqB6Mww77n4V-K9pOMMPCBebm_EHChnS8tM0f2dAfaQV_AAFIPS8jwJfAMd32t0TQ20DvUvtpgokK2DaIzdJCy1t6i1CTWS-PHsChp4ImOs"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex min-h-screen">
+<!-- SideNavBar - Project Context -->
+<aside class="bg-[#f3ede4] dark:bg-stone-900 text-stone-800 dark:text-stone-200 font-sans text-sm tracking-wide h-screen w-64 fixed left-0 top-0 pt-20 pb-8 flex flex-col px-4 z-40">
+<div class="mb-8 px-2">
+<div class="flex items-center space-x-3 mb-4">
+<div class="w-8 h-8 bg-tertiary rounded flex items-center justify-center text-white font-serif">A</div>
+<div>
+<p class="font-semibold text-on-surface">Current Workspace</p>
+<p class="text-xs text-outline">The Great Novel</p>
+</div>
+</div>
+<button class="w-full py-3 px-4 bg-primary text-on-primary rounded-md flex items-center justify-center space-x-2 font-medium hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>New Chapter</span>
+</button>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center space-x-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 rounded-md transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="book">book</span>
+<span>Manuscripts</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 rounded-md transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="segment">segment</span>
+<span>Chapters</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 rounded-md transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span>Research</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 rounded-md transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Characters</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-stone-500 dark:text-stone-400 hover:bg-white/50 dark:hover:bg-stone-800/50 rounded-md transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="format_list_bulleted">format_list_bulleted</span>
+<span>Outlines</span>
+</a>
+</nav>
+<div class="pt-6 border-t border-outline-variant/20 space-y-1">
+<a class="flex items-center space-x-3 px-4 py-2 text-stone-500 hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="archive">archive</span>
+<span>Archive</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 text-stone-500 hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+<span>Trash</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<section class="ml-64 flex-1 p-12 bg-surface">
+<!-- Header & Filter Bar -->
+<div class="max-w-7xl mx-auto mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+<div class="max-w-2xl">
+<h1 class="font-headline text-6xl text-stone-900 leading-tight mb-4 tracking-tighter">Community Library</h1>
+<p class="font-body text-lg text-outline leading-relaxed">Discover works-in-progress and completed masterpieces from our global community of authors. Each page is a step into a new world.</p>
+</div>
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap items-center gap-3 pb-8 border-b border-outline-variant/20">
+<span class="text-xs font-label uppercase tracking-widest text-outline mr-4">Filter by Genre</span>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-5 py-1.5 rounded-full text-sm font-medium hover:opacity-80 transition-opacity">All Works</button>
+<button class="bg-surface-container-high text-on-surface-variant px-5 py-1.5 rounded-full text-sm font-medium hover:bg-secondary-fixed/50 transition-colors">Literary Fiction</button>
+<button class="bg-surface-container-high text-on-surface-variant px-5 py-1.5 rounded-full text-sm font-medium hover:bg-secondary-fixed/50 transition-colors">Historical</button>
+<button class="bg-surface-container-high text-on-surface-variant px-5 py-1.5 rounded-full text-sm font-medium hover:bg-secondary-fixed/50 transition-colors">Poetry</button>
+<button class="bg-surface-container-high text-on-surface-variant px-5 py-1.5 rounded-full text-sm font-medium hover:bg-secondary-fixed/50 transition-colors">Memoir</button>
+<button class="bg-surface-container-high text-on-surface-variant px-5 py-1.5 rounded-full text-sm font-medium hover:bg-secondary-fixed/50 transition-colors">Philosophy</button>
+</div>
+</div>
+<!-- Masonry Grid of Books -->
+<div class="max-w-7xl mx-auto masonry-grid">
+<!-- Book Card 1 -->
+<div class="masonry-item group">
+<div class="bg-surface-container-lowest p-6 rounded-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-transparent hover:border-outline-variant/30">
+<div class="relative mb-6 overflow-hidden rounded-md shadow-md group-hover:shadow-xl transition-shadow">
+<img class="w-full h-auto" data-alt="Elegant minimalist book cover design with gold embossed lettering on a deep forest green linen texture background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJAbgkwnRjjPWX3PBF6QValPXz_rujyaFZGCaVmqmhLJMYA5d5EXxuEmnI3Z91nArSMQvSl1F6HJhhsJp2ZspBA5ypDlr1CK7RD4xg49a87etmkvjASe_pi7PCoc4kkitNX7ODRkzQrhS-tfSLt0P7IHxZ38HOgTvzXxkDf0FX4Jvz65yF7SUR7VDDivfHa2UjC--xMZiyXxSUs5BKGYII3bWIkzFAPoDEUntEgn-QXt7oRvfIu5tk20hDQ2gbv0sBOO5zbj9iLKU"/>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="bg-secondary-fixed text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full font-bold">Literary Fiction</span>
+<div class="flex text-secondary scale-75">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl text-stone-900 group-hover:text-tertiary transition-colors">The Last Echo of Summer</h3>
+<p class="text-xs font-medium text-outline">By Elena Rosales • 34 Chapters</p>
+<p class="text-sm text-on-surface/70 line-clamp-2 leading-relaxed italic font-serif">"The winds of July carried more than just heat; they brought back memories Elena had long ago tried to bury..."</p>
+<button class="w-full mt-4 bg-secondary text-on-secondary py-3 rounded-md font-medium tracking-wide hover:bg-tertiary transition-colors flex items-center justify-center space-x-2">
+<span>읽기</span>
+<span class="material-symbols-outlined text-sm">menu_book</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="masonry-item group">
+<div class="bg-surface-container-lowest p-6 rounded-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-transparent hover:border-outline-variant/30">
+<div class="relative mb-6 overflow-hidden rounded-md shadow-md group-hover:shadow-xl transition-shadow">
+<img class="w-full h-auto" data-alt="Classic old leather-bound book sitting on a dark wooden table with soft candle light and dust motes in the air" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCw1a-khTYDS1WPprFv0r6k6SfiwyB9mnm_ir-VWwyl2LzP6mSJG7H3xKh2RyHyAfnEtpj6i4vzyFM8V2-P9WRaR3nTiYDp_sk8Mqev1Qcpjun1aYWz0DIyS9SbcHnbTHcU29vwMUVjYsy1irwf__7T8BiL0oPMxJfiojx8ebDKfMynHhlOcfwaiyhM4tAnFi8H0D_Dha82tH4hMcUoRqtbhnPpg2bO7FmRzo2F-7KQx-ACTuFzGI-jfks2FDj7o_9JKjO03jD4htQ"/>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="bg-secondary-fixed text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full font-bold">Philosophy</span>
+<div class="flex text-secondary scale-75">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl text-stone-900 group-hover:text-tertiary transition-colors">Silent Conversations</h3>
+<p class="text-xs font-medium text-outline">By Marcus Aurelius Chen • 12 Essays</p>
+<button class="w-full mt-4 bg-secondary text-on-secondary py-3 rounded-md font-medium tracking-wide hover:bg-tertiary transition-colors">읽기</button>
+</div>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="masonry-item group">
+<div class="bg-surface-container-lowest p-6 rounded-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-transparent hover:border-outline-variant/30">
+<div class="relative mb-6 overflow-hidden rounded-md shadow-md group-hover:shadow-xl transition-shadow">
+<img class="w-full h-auto" data-alt="Modern abstract book cover featuring bold navy and burnt orange geometric shapes with clean white typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCphqSenUknA9grQLmzZ42aAfLDRTWaGC-7B0SsArDgxiuubTrBEJPxgkCcsq0YA1_fztcoLzUkf_x6i2SlzJQ99C4MIWP2abBjvPhqzdjHneLws-el3ir9O0Qfwc8O6DMI9h0m8_1ELcSBmERMW2oyV6igrpDashTeRwWz524O_Ht6UtP8IBlZyPiU98ZL85J6Acr3qNdoXx7WnJzSDsL3cpEikPJWimUD5vxFCt5cm8-Ka4iZXkCXemI6dEb4Yz7D6Dp9yUhQK04"/>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="bg-secondary-fixed text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full font-bold">Historical Fiction</span>
+<div class="flex text-secondary scale-75">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl text-stone-900 group-hover:text-tertiary transition-colors">The Weaver of Kyoto</h3>
+<p class="text-xs font-medium text-outline">By Hiroshi Tanaka • 52 Chapters</p>
+<p class="text-sm text-on-surface/70 line-clamp-3 leading-relaxed">A sweeping epic following three generations of silk weavers during the Meiji Restoration, charting the collision between ancient tradition and a rapidly industrializing Japan.</p>
+<button class="w-full mt-4 bg-secondary text-on-secondary py-3 rounded-md font-medium tracking-wide hover:bg-tertiary transition-colors">읽기</button>
+</div>
+</div>
+</div>
+<!-- Book Card 4 -->
+<div class="masonry-item group">
+<div class="bg-surface-container-lowest p-6 rounded-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-transparent hover:border-outline-variant/30">
+<div class="relative mb-6 overflow-hidden rounded-md shadow-md group-hover:shadow-xl transition-shadow">
+<img class="w-full h-auto" data-alt="Close-up of a stack of vintage papers with handwritten calligraphy and a dried wildflower pressed between the pages" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyubylLNr4AJ0OsRs1mS8AoL3AyQtCBJox0eCvYPuivw4I9iVHIxKs-IC1QTbSOtf1-XXc5WnUmZ2Od1ZYKEwQ_JxzFM4C7CJc5Gidq7xSlOzAJc9Bz-LFBLG0e3ZUgmjYzoxmHwetjBytc3mavVhTMezhMWhpLnwP4oBYtZaEGEeEMlpo7Sc5KEAxKPtAe7rBqZlAhurpR729wvulTNZ-WGRxJog2iK5Q9X0zXHf7BTplqszBo_4jFJmTe9VFE9ER57fDdQV04x4"/>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="bg-secondary-fixed text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full font-bold">Poetry</span>
+<div class="flex text-secondary scale-75">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl text-stone-900 group-hover:text-tertiary transition-colors">Fragments of Dust</h3>
+<p class="text-xs font-medium text-outline">By Sarah J. Miller • 105 Poems</p>
+<button class="w-full mt-4 bg-secondary text-on-secondary py-3 rounded-md font-medium tracking-wide hover:bg-tertiary transition-colors">읽기</button>
+</div>
+</div>
+</div>
+<!-- Book Card 5 -->
+<div class="masonry-item group">
+<div class="bg-surface-container-lowest p-6 rounded-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-transparent hover:border-outline-variant/30">
+<div class="relative mb-6 overflow-hidden rounded-md shadow-md group-hover:shadow-xl transition-shadow">
+<img class="w-full h-auto" data-alt="Atmospheric book cover with a silhouette of a lone lighthouse against a stormy indigo ocean and a faint moonlit sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBftba0GRAMzDH42iRISwM2uhlFUARDpjq6lbv21qfGDmyC4a7S0k2V7eyXJUgV5M7b1gwAhPDiHfi2vE0SGk1vQsotkQY_SGsh-5G5QLfAA9200RvO4uiUKv12ATT6rduaOlv5CEu-7tpTz6-uozLtksNsnCgyxdrWjlK2upgUyRP-dEz_we-W7YwBRqMGr5STHUq_elNW4Ww5ZIrvbkmFBVhdm57UNQcCjgCaxXqzwFmBL_xkjvG2NLGuSms3sxLjaNi4cBMAFmQ"/>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="bg-secondary-fixed text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full font-bold">Mystery</span>
+<div class="flex text-secondary scale-75">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl text-stone-900 group-hover:text-tertiary transition-colors">The Hollow Cape</h3>
+<p class="text-xs font-medium text-outline">By David Thorne • 28 Chapters</p>
+<p class="text-sm text-on-surface/70 line-clamp-2 leading-relaxed">No one ever leaves the Cape. Not alive, anyway. A chilling psychological thriller that questions the nature of reality.</p>
+<button class="w-full mt-4 bg-secondary text-on-secondary py-3 rounded-md font-medium tracking-wide hover:bg-tertiary transition-colors">읽기</button>
+</div>
+</div>
+</div>
+<!-- Book Card 6 -->
+<div class="masonry-item group">
+<div class="bg-surface-container-lowest p-6 rounded-lg transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-transparent hover:border-outline-variant/30">
+<div class="relative mb-6 overflow-hidden rounded-md shadow-md group-hover:shadow-xl transition-shadow">
+<img class="w-full h-auto" data-alt="Dramatic high-contrast photo of a person's hand holding an old fountain pen over a blank aged parchment paper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4ypSiBTIiriFlKMNEPo7PhXcdVU8SzXEHe0E6TGh202DHh384MD7aUqF0jolsjlI3BPw1ez6_fomuiooau78Fc7tGngtguA45-r3H8c4HrM-3gMQJXqK46kDrcKY1Y9lSNkYNt9DjKyZUcbfeRXW5oIpmOVkeuDaSkuTmV2NdTomhLok1mhBd1vJ_ZJXw64iUJv3WDXu9MqpyJ6TfBa6KUE2E2uaGyo43a9aGlI-oNZK4pCQK5Vh4kynCoar_1xJOaJbpStn0v9k"/>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="bg-secondary-fixed text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full font-bold">Memoir</span>
+<div class="flex text-secondary scale-75">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<h3 class="font-headline text-2xl text-stone-900 group-hover:text-tertiary transition-colors">Ink in My Veins</h3>
+<p class="text-xs font-medium text-outline">By Clara Kingsley • 18 Chapters</p>
+<button class="w-full mt-4 bg-secondary text-on-secondary py-3 rounded-md font-medium tracking-wide hover:bg-tertiary transition-colors">읽기</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="flex justify-center mt-20 mb-32">
+<button class="flex items-center space-x-3 px-8 py-4 bg-surface-container-high border border-outline-variant/30 text-stone-900 font-label uppercase tracking-widest text-xs font-bold hover:bg-surface-container-highest transition-colors rounded-full">
+<span>Explore more works</span>
+<span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f5efe6] dark:bg-stone-950 text-stone-900 dark:text-stone-100 font-sans text-xs uppercase tracking-widest full-width bottom-0 w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center border-t border-stone-200/30 dark:border-stone-800/30 tonal-shift mt-20">
+<div class="font-serif italic text-stone-500 mb-6 md:mb-0">I'm Author Publishing</div>
+<div class="flex flex-wrap justify-center gap-8 mb-6 md:mb-0">
+<a class="text-stone-400 dark:text-stone-600 hover:text-amber-700 dark:hover:text-amber-500 transition-colors" href="#">Terms of Service</a>
+<a class="text-stone-400 dark:text-stone-600 hover:text-amber-700 dark:hover:text-amber-500 transition-colors" href="#">Privacy Policy</a>
+<a class="text-stone-400 dark:text-stone-600 hover:text-amber-700 dark:hover:text-amber-500 transition-colors" href="#">Author Support</a>
+<a class="text-stone-400 dark:text-stone-600 hover:text-amber-700 dark:hover:text-amber-500 transition-colors" href="#">Editorial Guidelines</a>
+</div>
+<div class="text-stone-400">© 2024 I'm Author Publishing. All rights reserved.</div>
+</footer>
+</body></html>

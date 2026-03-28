@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>I'm Author - Creation Workspace</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Serif:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#e7e2d9",
+              "primary": "#5a5653",
+              "outline": "#897267",
+              "on-surface": "#1d1b16",
+              "surface-container-lowest": "#ffffff",
+              "inverse-on-surface": "#f6f0e7",
+              "primary-container": "#736e6b",
+              "secondary-container": "#fd8a42",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#76330d",
+              "on-tertiary": "#ffffff",
+              "on-background": "#1d1b16",
+              "surface-container-low": "#f9f3ea",
+              "on-secondary-fixed": "#331200",
+              "on-secondary-fixed-variant": "#763300",
+              "on-error-container": "#93000a",
+              "secondary": "#9b4500",
+              "on-tertiary-fixed": "#351000",
+              "tertiary-fixed-dim": "#ffb693",
+              "surface-dim": "#dfd9d1",
+              "surface-tint": "#625d5b",
+              "tertiary": "#8a421c",
+              "on-error": "#ffffff",
+              "surface-variant": "#e7e2d9",
+              "tertiary-fixed": "#ffdbcc",
+              "on-surface-variant": "#564338",
+              "surface-container-high": "#ede7de",
+              "surface-container": "#f3ede4",
+              "tertiary-container": "#a85a32",
+              "on-primary-fixed": "#1e1b19",
+              "on-primary-fixed-variant": "#4a4643",
+              "background": "#fff9ef",
+              "surface": "#fff9ef",
+              "primary-fixed": "#e9e1dd",
+              "on-primary-container": "#faf2ee",
+              "inverse-surface": "#32302a",
+              "surface-bright": "#fff9ef",
+              "error": "#ba1a1a",
+              "on-tertiary-container": "#fff0eb",
+              "inverse-primary": "#ccc5c2",
+              "error-container": "#ffdad6",
+              "on-primary": "#ffffff",
+              "outline-variant": "#ddc1b3",
+              "primary-fixed-dim": "#ccc5c2",
+              "secondary-fixed": "#ffdbca",
+              "secondary-fixed-dim": "#ffb68e",
+              "on-secondary-container": "#682c00"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-serif { font-family: 'Noto Serif', serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #ddc1b3; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-hidden h-screen flex flex-col">
+<!-- TopAppBar -->
+<nav class="flex justify-between items-center w-full px-8 py-4 sticky top-0 bg-[#fdf9f3]/80 dark:bg-stone-950/80 backdrop-blur-md z-50 font-serif tracking-tight leading-relaxed no-border bg-stone-100/50 dark:bg-stone-800/30">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold font-serif text-stone-900 dark:text-stone-50">I'm Author</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Write</a>
+<a class="text-amber-700 dark:text-amber-500 font-semibold border-b-2 border-amber-700 dark:border-amber-500 pb-1" href="#">Library</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 transition-colors duration-300" href="#">Community</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container-highest rounded-sm border-none text-sm px-4 py-2 w-64 focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all" placeholder="Search manuscripts..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-stone-600 hover:text-amber-700 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-stone-600 hover:text-amber-700 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden border border-outline-variant/20">
+<img alt="User profile avatar" data-alt="Close-up professional portrait of a smiling middle-aged man with short dark hair in a bright studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPqcxH33Qe0jzUJ0cSMxhRcBdMST9QCQCCbplEuP_JmiOiAVSUXbeqK8u4_njtM3rdsC3ZyorlgtiiThC898oHFVRV-hN4ecO5t4pnn5bNhCReyP1cxGxNJnpw2h5QyWF6tbqBfMtwYjdtLaWNz9yhFkCz9T60nQnuIGPgfup5ApDHU-3XuPIzZbZEvPjNOXRgnsQIh7ofexAuzBfVdkY_OdcXaBcHde3jv3G-C6OzAUermc9bQsPypiXcbIvSOSAhX6ajpulVbu0"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Hidden on main creation view to maximize space, but available as floating anchor) -->
+<aside class="fixed left-0 top-0 h-full pt-20 pb-8 flex flex-col px-4 bg-[#f3ede4] dark:bg-stone-900 h-screen w-16 group hover:w-64 transition-all duration-300 z-40 overflow-hidden shadow-2xl md:shadow-none border-r border-outline-variant/10">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-4 px-2 mb-4">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary shrink-0">
+<span class="material-symbols-outlined text-sm">auto_stories</span>
+</div>
+<div class="opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+<p class="font-bold text-xs uppercase tracking-tighter">Current Workspace</p>
+<p class="text-xs text-stone-500">The Great Novel</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 p-2 text-stone-500 hover:bg-white/50 rounded-md transition-all" href="#">
+<span class="material-symbols-outlined">book</span>
+<span class="opacity-0 group-hover:opacity-100 whitespace-nowrap">Manuscripts</span>
+</a>
+<a class="flex items-center gap-4 p-2 bg-[#ffffff] text-amber-700 rounded-md shadow-sm font-medium transition-all" href="#">
+<span class="material-symbols-outlined">segment</span>
+<span class="opacity-0 group-hover:opacity-100 whitespace-nowrap">Chapters</span>
+</a>
+<a class="flex items-center gap-4 p-2 text-stone-500 hover:bg-white/50 rounded-md transition-all" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="opacity-0 group-hover:opacity-100 whitespace-nowrap">Research</span>
+</a>
+<a class="flex items-center gap-4 p-2 text-stone-500 hover:bg-white/50 rounded-md transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="opacity-0 group-hover:opacity-100 whitespace-nowrap">Characters</span>
+</a>
+<a class="flex items-center gap-4 p-2 text-stone-500 hover:bg-white/50 rounded-md transition-all" href="#">
+<span class="material-symbols-outlined">format_list_bulleted</span>
+<span class="opacity-0 group-hover:opacity-100 whitespace-nowrap">Outlines</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto flex flex-col gap-2">
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-md font-medium text-sm flex items-center justify-center gap-2 mb-4 overflow-hidden">
+<span class="material-symbols-outlined text-sm">add</span>
+<span class="opacity-0 group-hover:opacity-100 whitespace-nowrap">New Chapter</span>
+</button>
+<a class="flex items-center gap-4 p-2 text-stone-400 hover:text-amber-700 transition-all" href="#">
+<span class="material-symbols-outlined">archive</span>
+<span class="opacity-0 group-hover:opacity-100 whitespace-nowrap">Archive</span>
+</a>
+<a class="flex items-center gap-4 p-2 text-stone-400 hover:text-amber-700 transition-all" href="#">
+<span class="material-symbols-outlined">delete</span>
+<span class="opacity-0 group-hover:opacity-100 whitespace-nowrap">Trash</span>
+</a>
+</div>
+</aside>
+<!-- Main Workspace Container -->
+<main class="flex-1 flex flex-col ml-16 bg-surface overflow-hidden">
+<!-- Workspace Header & Pipeline -->
+<header class="bg-surface-container-low px-8 pt-6 pb-2 border-b border-outline-variant/10">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative">
+<select class="bg-surface-container-highest border-none text-xs font-semibold tracking-widest uppercase rounded px-3 py-2 pr-8 appearance-none focus:ring-0">
+<option>Historical Fiction</option>
+<option>Sci-Fi Noir</option>
+<option>Literary Essay</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-xs pointer-events-none">expand_more</span>
+</div>
+<div class="h-4 w-px bg-outline-variant/30"></div>
+<input class="bg-transparent border-none font-serif text-xl font-bold p-0 focus:ring-0 w-full md:w-auto" placeholder="Enter topic or title..." type="text" value="The Echoes of the Forgotten Valley"/>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 text-xs font-semibold tracking-wider uppercase text-on-surface/60 hover:text-on-surface transition-colors">Draft Saved</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-md text-sm font-medium shadow-sm hover:opacity-90 transition-all">Publish</button>
+</div>
+</div>
+<!-- Pipeline Bar -->
+<div class="flex items-center justify-between max-w-5xl mx-auto py-4 overflow-x-auto no-scrollbar gap-4">
+<div class="flex flex-col items-center gap-2 group cursor-pointer">
+<div class="w-10 h-10 rounded-full flex items-center justify-center bg-tertiary text-on-tertiary ring-4 ring-tertiary/10">
+<span class="material-symbols-outlined text-lg" data-weight="fill">travel_explore</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase text-tertiary">주제조사</span>
+</div>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-base">auto_awesome</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase">시놉시스</span>
+</div>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-base">format_list_numbered</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase">목차</span>
+</div>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-base">edit_note</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase">집필</span>
+</div>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-base">spellcheck</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase">편집</span>
+</div>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-base">book</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase">출판</span>
+</div>
+<div class="h-px flex-1 bg-outline-variant/30"></div>
+<div class="flex flex-col items-center gap-2 opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-base">check_circle</span>
+</div>
+<span class="text-[10px] font-bold tracking-widest uppercase">완료</span>
+</div>
+</div>
+</header>
+<!-- Main Workspace Panels -->
+<section class="flex flex-1 overflow-hidden">
+<!-- Left Panel: AI Agent Chat (40%) -->
+<div class="w-full md:w-[40%] bg-surface-container flex flex-col border-r border-outline-variant/10">
+<div class="p-4 border-b border-outline-variant/10 flex justify-between items-center bg-surface-container-high/30">
+<div class="flex gap-2">
+<button class="bg-surface-container-lowest shadow-sm rounded-full px-4 py-1.5 text-xs font-semibold flex items-center gap-2 text-primary">
+<span class="w-2 h-2 rounded-full bg-[#8b5cf6]"></span>
+                            Researcher
+                        </button>
+<button class="hover:bg-surface-container-lowest transition-colors rounded-full px-4 py-1.5 text-xs font-semibold flex items-center gap-2 text-stone-500">
+<span class="w-2 h-2 rounded-full bg-[#3b82f6]"></span>
+                            Writer
+                        </button>
+</div>
+<button class="p-2 hover:bg-surface-container-highest rounded-full transition-colors">
+<span class="material-symbols-outlined text-lg">history</span>
+</button>
+</div>
+<!-- Chat Messages -->
+<div class="flex-1 overflow-y-auto p-6 flex flex-col gap-6 custom-scrollbar">
+<!-- Researcher Message -->
+<div class="flex flex-col gap-3 max-w-[90%]">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-[#8b5cf6] flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-white" data-weight="fill">travel_explore</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface/50">Researcher Agent</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl rounded-tl-none shadow-sm border border-outline-variant/5">
+<p class="text-sm leading-relaxed text-stone-800">
+                                I've analyzed the primary historical context for "The Forgotten Valley." Based on 19th-century accounts, the prevailing architecture was characterized by dry-stone masonry and timber framing. Would you like me to generate a sensory description for Chapter 1's setting?
+                            </p>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex flex-col gap-3 max-w-[90%] self-end items-end">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface/50">Author</span>
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-white">person</span>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-4 rounded-xl rounded-tr-none shadow-sm">
+<p class="text-sm leading-relaxed">
+                                Yes, focus on the contrast between the cold stone and the warmth of the hearth. Keep it evocative but grounded.
+                            </p>
+</div>
+</div>
+<!-- Writer Message (Blue Bubble) -->
+<div class="flex flex-col gap-3 max-w-[90%]">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-[#3b82f6] flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-white" data-weight="fill">edit_note</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface/50">Writer Agent</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl rounded-tl-none shadow-sm border border-outline-variant/5">
+<p class="text-sm leading-relaxed text-stone-800">
+                                drafting draft... <br/><br/>
+<span class="italic text-stone-500">"The granite walls held the winter’s breath, a damp chill that seeped into the marrow, but the fireplace roared—a defiant amber pulse against the encroaching silence..."</span>
+</p>
+</div>
+</div>
+</div>
+<!-- Chat Input -->
+<div class="p-6 bg-surface-container-high/40 border-t border-outline-variant/10">
+<div class="relative group">
+<textarea class="w-full bg-surface-container-lowest border-none rounded-xl p-4 text-sm focus:ring-1 focus:ring-primary shadow-inner resize-none custom-scrollbar" placeholder="Give your agents a command..." rows="3"></textarea>
+<div class="absolute bottom-3 right-3 flex gap-2">
+<button class="p-2 text-stone-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="p-2 bg-secondary text-on-secondary rounded-lg shadow-sm hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Book Preview Area (60%) -->
+<div class="hidden md:flex flex-col flex-1 bg-surface-container-low overflow-hidden">
+<!-- Toolbar -->
+<div class="p-3 border-b border-outline-variant/10 bg-surface-container-low flex items-center justify-between px-6">
+<div class="flex gap-4">
+<div class="flex items-center gap-1 border-r border-outline-variant/20 pr-4">
+<button class="p-1.5 hover:bg-surface-container-high rounded transition-colors"><span class="material-symbols-outlined text-xl">format_bold</span></button>
+<button class="p-1.5 hover:bg-surface-container-high rounded transition-colors"><span class="material-symbols-outlined text-xl">format_italic</span></button>
+<button class="p-1.5 hover:bg-surface-container-high rounded transition-colors"><span class="material-symbols-outlined text-xl">format_quote</span></button>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs font-medium text-stone-500">Font: Noto Serif</span>
+<span class="text-xs font-medium text-stone-500">Size: 12pt</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-1.5 hover:bg-surface-container-high rounded transition-colors text-stone-400"><span class="material-symbols-outlined">zoom_in</span></button>
+<button class="p-1.5 hover:bg-surface-container-high rounded transition-colors text-stone-400"><span class="material-symbols-outlined">fullscreen</span></button>
+</div>
+</div>
+<!-- Canvas / Manuscript Page -->
+<div class="flex-1 overflow-y-auto p-12 custom-scrollbar bg-stone-100/30">
+<div class="max-w-2xl mx-auto bg-surface-container-lowest shadow-[0_4px_20px_rgba(0,0,0,0.03)] min-h-[1200px] p-20 relative border border-outline-variant/10">
+<!-- Chapter Header -->
+<div class="mb-12 text-center">
+<p class="font-label text-[10px] font-bold tracking-[0.3em] uppercase text-tertiary mb-4">Chapter One</p>
+<h2 class="font-serif text-3xl font-bold tracking-tight text-on-surface">The Hearth of Silence</h2>
+<div class="w-12 h-0.5 bg-outline-variant/30 mx-auto mt-6"></div>
+</div>
+<!-- Content Body -->
+<div class="font-serif text-lg leading-[1.8] text-stone-800 space-y-8 first-letter:text-5xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:font-serif">
+<p>
+                                The valley had a way of swallowingly sound. It wasn't that the world was empty, but rather that the silence was of a different quality—a thick, textured quiet that felt like being submerged in cold water. Silas pulled his cloak tighter, the coarse wool rasping against his chin. He watched the last of the sun slip behind the jagged peaks, painting the slate roofs of the village in bruised purples and dying golds.
+                            </p>
+<p>
+                                Inside the stone cottage, the fire was the only living thing. It snapped and crackled, throwing elongated shadows against the uneven walls that seemed to dance to a rhythm only they understood. Elias stood by the window, his silhouette sharp and unmoving. He had been looking out into the gathering gloom for nearly an hour, his fingers tracing the condensation on the glass.
+                            </p>
+<p>
+                                "They're late," Elias said, his voice barely a murmur. 
+                            </p>
+<p class="relative">
+                                Silas didn't answer. He knew who 'they' were, and he knew why they were late. The pass was treacherous this time of year, and the rumors of the shadow-beasts were no longer just tavern tales told to frighten children.
+                                <span class="inline-block w-[2px] h-[1.2em] bg-secondary animate-pulse absolute ml-1"></span>
+</p>
+</div>
+<!-- Page Metadata -->
+<div class="absolute bottom-10 left-0 right-0 text-center text-[10px] font-bold tracking-widest text-stone-400 uppercase">
+                            Page 1 — Word Count: 242
+                        </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-4 px-8 flex flex-col md:flex-row justify-between items-center border-t border-stone-200/30 dark:border-stone-800/30 bg-[#f5efe6] dark:bg-stone-950 font-sans text-xs uppercase tracking-widest z-50">
+<div class="flex items-center gap-6">
+<span class="font-serif italic text-stone-500">I'm Author</span>
+<div class="flex gap-4">
+<a class="text-stone-400 dark:text-stone-600 hover:text-amber-700 dark:hover:text-amber-500 transition-colors" href="#">Terms of Service</a>
+<a class="text-stone-400 dark:text-stone-600 hover:text-amber-700 dark:hover:text-amber-500 transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+<div class="mt-4 md:mt-0 text-stone-900 dark:text-stone-100">
+            © 2024 I'm Author Publishing. All rights reserved.
+        </div>
+</footer>
+</body></html>
