@@ -511,6 +511,54 @@ export default function BookPreview({
   }
 
   const renderComplete = () => {
+    // NO_GO 판정 또는 에러로 종료된 경우
+    if (project.chapters.length === 0) {
+      const isNoGo = project.research?.goNoGo === 'NO_GO'
+      return (
+        <section className="rounded-[28px] border border-stone-200 bg-[#fffdfa] p-6">
+          <div className="text-center">
+            <div className="text-4xl">{isNoGo ? '🚫' : '⚠️'}</div>
+            <h2 className="mt-4 text-2xl font-bold text-stone-900">
+              {isNoGo ? '주제 재검토가 필요합니다' : '파이프라인이 중단되었습니다'}
+            </h2>
+            <p className="mt-3 text-base text-stone-600 max-w-md mx-auto">
+              {isNoGo
+                ? `리서처의 시장성 분석 결과 NO_GO 판정이 내려졌습니다. ${project.research?.reasoning || '다른 주제로 다시 시도해보세요.'}`
+                : '책 작성 과정에서 오류가 발생했습니다. 다른 주제로 다시 시도해보세요.'}
+            </p>
+          </div>
+
+          {isNoGo && project.research ? (
+            <div className="mt-6 rounded-[24px] bg-[#f8f2ea] p-5">
+              <h3 className="font-semibold text-stone-900">분석 결과</h3>
+              <p className="mt-2 text-sm text-stone-600">
+                시장 트렌드: {project.research.marketAnalysis.trend}
+              </p>
+              <p className="mt-1 text-sm text-stone-600">
+                차별화 포인트: {project.research.differentiation}
+              </p>
+              <div className="mt-3 flex items-center gap-2">
+                <span className="text-sm text-stone-500">신뢰도:</span>
+                <span className="text-sm font-semibold text-stone-900">
+                  {Math.round(project.research.confidence * 100)}%
+                </span>
+              </div>
+            </div>
+          ) : null}
+
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              onClick={onReset}
+              className="rounded-2xl bg-amber-700 px-5 py-3 text-sm font-semibold text-amber-50"
+            >
+              다른 주제로 다시 시도
+            </button>
+          </div>
+        </section>
+      )
+    }
+
     const chaptersForStats = activeChapter
       ? [activeChapter, ...project.chapters.slice(1)]
       : project.chapters
